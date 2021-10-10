@@ -1,0 +1,22 @@
+syntax = "proto3";
+option go_package = "github.com/inouttt/stkt/test_2";
+
+service MovieService {
+  rpc Search(SearchRequest) returns (Response);
+  rpc Detail(DetailRequest) returns (Response);
+}
+
+message SearchRequest {
+  string api_key = 1;
+  string search = 2;
+  string page = 3;
+}
+
+message DetailRequest {
+  string api_key = 1;
+  string id = 3;
+}
+
+message Response {
+  bytes payload = 1;
+}
